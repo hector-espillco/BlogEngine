@@ -1,0 +1,75 @@
+﻿@page "/Index"
+@inherits IndexPage
+
+@layout MainLayout
+
+@attribute [Authorize]
+
+<div class="all-content padding-15">
+
+    <div class="header">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold">@Author.Name</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="data">
+        
+        @if (Posts is not null && Posts.Any())
+        {
+            foreach (var post in Posts)
+            {
+                <div class="card">
+                    <div class="card-header">
+                        <div class="col-12 p-0 height-50-por float-left">
+                            <span class="authorName">@post.AuthorName</span>
+                        </div>
+                        <div class="col-12 p-0 height-50-por float-left">
+                            <span class="publishedDate">@post.PublishedDate</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">@post.Title</h5>
+                        <p class="card-text">
+                            @post.Content
+                        </p>
+                        <br>
+
+                        @if (post.Comments is not null && post.Comments.Any())
+                        {
+                            <a href="#" class="card-link"
+                               @onclick="()=> SeeComments(post)"
+                               @onclick:preventDefault>See Comments</a>
+
+                            if (post.SeeComments)
+                            {
+                                foreach (var comment in post.Comments)
+                                {
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <p class="card-text">
+                                                @comment.Content
+                                            </p>
+                                        </div>
+                                    </div>
+                                }
+
+                                <div class="col-12 text-right">
+                                    <a href="#" class="card-link"
+                                       @onclick="()=> HideComments(post)"
+                                       @onclick:preventDefault>Hide Comments</a>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+
+
+

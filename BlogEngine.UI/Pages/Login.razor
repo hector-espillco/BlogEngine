@@ -1,0 +1,36 @@
+﻿@page "/"
+@page "/Login"
+
+@layout Layout
+@inherits LoginPage
+
+<div class="height-20-por">
+</div>
+
+<div class="greeting greeting_margin">
+    Login
+</div>
+
+<EditForm Model="Author" OnValidSubmit="@ValidateUser">
+    <div class="text-center">
+        <InputText class="col-12 input input_text" @bind-Value="@Author.UserName"
+                   placeholder="Username" />
+    </div>
+    <br />
+    <div class="text-center">
+        <InputText type="password" class="col-12 input input_text"
+                   @bind-Value="@Author.Password" placeholder="Password" />
+    </div>
+    <br />
+    <div class="text-center">
+        <input type="submit" class="button" value="Login" />
+    </div>
+
+    <div class="col-12 float-left p-0 login-box-message">
+        <div class="col-6 justify-content-center">
+            <p class="text-danger">@Message</p>
+        </div>
+    </div>
+
+    <DataAnnotationsValidator />
+</EditForm>
