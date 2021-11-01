@@ -1,0 +1,286 @@
+2021-10-29 18:15:26.810 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-29 18:15:26.826 -05:00 [INF] Hosting environment: Development
+2021-10-29 18:15:26.829 -05:00 [INF] Content root path: C:\Personal\BlogEngine\BlogEngine.API
+2021-10-29 18:15:26.832 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/post - -
+2021-10-29 18:15:26.930 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/post - - - 404 - - 101.9258ms
+2021-10-29 18:17:33.137 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-29 18:17:33.149 -05:00 [INF] Hosting environment: Development
+2021-10-29 18:17:33.154 -05:00 [INF] Content root path: C:\Personal\BlogEngine\BlogEngine.API
+2021-10-29 18:17:33.155 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger - -
+2021-10-29 18:17:33.213 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/index.html - -
+2021-10-29 18:17:33.241 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger - - - 301 - - 91.6223ms
+2021-10-29 18:17:33.319 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/index.html - - - 200 - text/html;charset=utf-8 109.1771ms
+2021-10-29 18:17:33.333 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - -
+2021-10-29 18:17:33.333 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - -
+2021-10-29 18:17:33.334 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - -
+2021-10-29 18:17:33.375 -05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-10-29 18:17:33.375 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-10-29 18:17:33.375 -05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-10-29 18:17:33.377 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - - - 200 143632 text/css 44.1063ms
+2021-10-29 18:17:33.381 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 46.6307ms
+2021-10-29 18:17:33.454 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 121.1945ms
+2021-10-29 18:17:33.654 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - -
+2021-10-29 18:17:33.688 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/favicon-32x32.png - -
+2021-10-29 18:17:33.689 -05:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2021-10-29 18:17:33.691 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/favicon-32x32.png - - - 200 628 image/png 2.1473ms
+2021-10-29 18:17:33.748 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 93.5115ms
+2021-10-29 18:17:49.582 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - -
+2021-10-29 18:17:49.587 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 5.1957ms
+2021-10-29 18:17:49.628 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/favicon.ico - -
+2021-10-29 18:17:49.665 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/favicon.ico - - - 404 - - 37.6383ms
+2021-10-29 22:53:10.962 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-29 22:53:45.099 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-29 22:53:46.123 -05:00 [INF] Executed DbCommand (206ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [Blog];
+2021-10-29 22:53:46.172 -05:00 [INF] Executed DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [Blog] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2021-10-29 22:53:46.186 -05:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-10-29 22:53:46.275 -05:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2021-10-29 22:53:46.276 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-10-29 22:53:46.292 -05:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-10-29 22:53:46.296 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2021-10-29 22:53:46.311 -05:00 [INF] Applying migration '20211030035311_initial-database'.
+2021-10-29 22:53:46.346 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Author] (
+    [Id] int NOT NULL IDENTITY,
+    [UserName] nvarchar(max) NULL,
+    [Password] nvarchar(max) NULL,
+    [Name] nvarchar(max) NULL,
+    [Role] int NOT NULL,
+    CONSTRAINT [PK_Author] PRIMARY KEY ([Id])
+);
+2021-10-29 22:53:46.348 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Post] (
+    [Id] int NOT NULL IDENTITY,
+    [Title] nvarchar(max) NULL,
+    [Content] nvarchar(max) NULL,
+    [AuthorId] int NOT NULL,
+    [PublishedDate] datetime2 NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Post] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Post_Author_AuthorId] FOREIGN KEY ([AuthorId]) REFERENCES [Author] ([Id]) ON DELETE CASCADE
+);
+2021-10-29 22:53:46.350 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Comment] (
+    [Id] int NOT NULL IDENTITY,
+    [AuthorId] int NOT NULL,
+    [Content] nvarchar(max) NULL,
+    [CreatedDate] datetime2 NOT NULL,
+    [PostId] int NOT NULL,
+    CONSTRAINT [PK_Comment] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Comment_Author_AuthorId] FOREIGN KEY ([AuthorId]) REFERENCES [Author] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_Comment_Post_PostId] FOREIGN KEY ([PostId]) REFERENCES [Post] ([Id]) ON DELETE CASCADE
+);
+2021-10-29 22:53:46.353 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Comment_AuthorId] ON [Comment] ([AuthorId]);
+2021-10-29 22:53:46.353 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Comment_PostId] ON [Comment] ([PostId]);
+2021-10-29 22:53:46.354 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Post_AuthorId] ON [Post] ([AuthorId]);
+2021-10-29 22:53:46.355 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20211030035311_initial-database', N'5.0.0');
+2021-10-29 23:02:12.651 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-29 23:02:19.671 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-29 23:02:20.688 -05:00 [INF] Executed DbCommand (213ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [BlogEngine];
+2021-10-29 23:02:20.736 -05:00 [INF] Executed DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [BlogEngine] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2021-10-29 23:02:20.752 -05:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-10-29 23:02:20.850 -05:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2021-10-29 23:02:20.851 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-10-29 23:02:20.869 -05:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-10-29 23:02:20.873 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2021-10-29 23:02:20.888 -05:00 [INF] Applying migration '20211030040212_initial-database'.
+2021-10-29 23:02:20.922 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Author] (
+    [Id] int NOT NULL IDENTITY,
+    [UserName] nvarchar(max) NULL,
+    [Password] nvarchar(max) NULL,
+    [Name] nvarchar(max) NULL,
+    [Role] int NOT NULL,
+    CONSTRAINT [PK_Author] PRIMARY KEY ([Id])
+);
+2021-10-29 23:02:20.924 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Post] (
+    [Id] int NOT NULL IDENTITY,
+    [Title] nvarchar(max) NULL,
+    [Content] nvarchar(max) NULL,
+    [AuthorId] int NOT NULL,
+    [PublishedDate] datetime2 NULL,
+    [Status] int NOT NULL,
+    [CreatedDate] datetime2 NOT NULL,
+    CONSTRAINT [PK_Post] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Post_Author_AuthorId] FOREIGN KEY ([AuthorId]) REFERENCES [Author] ([Id]) ON DELETE CASCADE
+);
+2021-10-29 23:02:20.925 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Comment] (
+    [Id] int NOT NULL IDENTITY,
+    [AuthorId] int NOT NULL,
+    [Content] nvarchar(max) NULL,
+    [CreatedDate] datetime2 NOT NULL,
+    [PostId] int NOT NULL,
+    CONSTRAINT [PK_Comment] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Comment_Author_AuthorId] FOREIGN KEY ([AuthorId]) REFERENCES [Author] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_Comment_Post_PostId] FOREIGN KEY ([PostId]) REFERENCES [Post] ([Id]) ON DELETE CASCADE
+);
+2021-10-29 23:02:20.926 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Comment_AuthorId] ON [Comment] ([AuthorId]);
+2021-10-29 23:02:20.926 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Comment_PostId] ON [Comment] ([PostId]);
+2021-10-29 23:02:20.927 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Post_AuthorId] ON [Post] ([AuthorId]);
+2021-10-29 23:02:20.928 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20211030040212_initial-database', N'5.0.0');
+2021-10-29 23:26:31.568 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-29 23:26:31.580 -05:00 [INF] Hosting environment: Development
+2021-10-29 23:26:31.582 -05:00 [INF] Content root path: C:\Personal\BlogEngine\BlogEngine.API
+2021-10-29 23:26:31.584 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger - -
+2021-10-29 23:26:31.634 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/index.html - -
+2021-10-29 23:26:31.659 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger - - - 301 - - 77.9028ms
+2021-10-29 23:26:31.735 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/index.html - - - 200 - text/html;charset=utf-8 100.8802ms
+2021-10-29 23:26:31.752 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - -
+2021-10-29 23:26:31.752 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - -
+2021-10-29 23:26:31.752 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - -
+2021-10-29 23:26:31.787 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-10-29 23:26:31.787 -05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-10-29 23:26:31.787 -05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-10-29 23:26:31.791 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - - - 200 143632 text/css 38.6149ms
+2021-10-29 23:26:31.795 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 42.4575ms
+2021-10-29 23:26:31.854 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 101.9842ms
+2021-10-29 23:26:32.020 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - -
+2021-10-29 23:26:32.113 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 92.2300ms
+2021-10-29 23:27:09.273 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 93
+2021-10-29 23:27:09.312 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API)'
+2021-10-29 23:27:09.348 -05:00 [INF] Route matched with {action = "AddPost", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostResponseDto] AddPost(BlogEngine.Dto.Request.PostRequestDto) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-29 23:27:10.076 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-29 23:27:10.661 -05:00 [INF] Executed DbCommand (45ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Post] ([AuthorId], [Content], [CreatedDate], [PublishedDate], [Status], [Title])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [Post]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2021-10-29 23:27:10.731 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostResponseDto'.
+2021-10-29 23:27:10.749 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API) in 1395.7197ms
+2021-10-29 23:27:10.750 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API)'
+2021-10-29 23:27:10.751 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 93 - 200 - application/json;+charset=utf-8 1477.6173ms
+2021-10-29 23:32:04.979 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-29 23:32:04.992 -05:00 [INF] Hosting environment: Development
+2021-10-29 23:32:04.994 -05:00 [INF] Content root path: C:\Personal\BlogEngine\BlogEngine.API
+2021-10-29 23:32:04.996 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger - -
+2021-10-29 23:32:05.044 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/index.html - -
+2021-10-29 23:32:05.113 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger - - - 301 - - 119.3012ms
+2021-10-29 23:32:05.203 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/index.html - - - 200 - text/html;charset=utf-8 158.8625ms
+2021-10-29 23:32:05.216 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - -
+2021-10-29 23:32:05.216 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - -
+2021-10-29 23:32:05.216 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - -
+2021-10-29 23:32:05.259 -05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-10-29 23:32:05.259 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-10-29 23:32:05.259 -05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-10-29 23:32:05.261 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - - - 200 143632 text/css 45.1564ms
+2021-10-29 23:32:05.265 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 48.7677ms
+2021-10-29 23:32:05.321 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 104.7571ms
+2021-10-29 23:32:05.606 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - -
+2021-10-29 23:32:05.686 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 79.2426ms
+2021-10-29 23:32:36.610 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 76
+2021-10-29 23:32:36.653 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API)'
+2021-10-29 23:32:36.689 -05:00 [INF] Route matched with {action = "AddPost", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostResponseDto] AddPost(BlogEngine.Dto.Request.PostRequestDto) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-29 23:32:37.433 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-29 23:32:38.016 -05:00 [INF] Executed DbCommand (45ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Post] ([AuthorId], [Content], [CreatedDate], [PublishedDate], [Status], [Title])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [Post]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2021-10-29 23:32:42.325 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostResponseDto'.
+2021-10-29 23:32:42.343 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API) in 5648.9915ms
+2021-10-29 23:32:42.344 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API)'
+2021-10-29 23:32:42.345 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 76 - 200 - application/json;+charset=utf-8 5735.9723ms
+2021-10-29 23:43:11.667 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-29 23:43:11.682 -05:00 [INF] Hosting environment: Development
+2021-10-29 23:43:11.685 -05:00 [INF] Content root path: C:\Personal\BlogEngine\BlogEngine.API
+2021-10-29 23:43:11.685 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger - -
+2021-10-29 23:43:11.742 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/index.html - -
+2021-10-29 23:43:11.752 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger - - - 301 - - 71.7414ms
+2021-10-29 23:43:11.832 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/index.html - - - 200 - text/html;charset=utf-8 89.8631ms
+2021-10-29 23:43:11.845 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - -
+2021-10-29 23:43:11.845 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - -
+2021-10-29 23:43:11.845 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - -
+2021-10-29 23:43:11.884 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-10-29 23:43:11.884 -05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-10-29 23:43:11.884 -05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-10-29 23:43:11.888 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - - - 200 143632 text/css 43.1265ms
+2021-10-29 23:43:11.892 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 46.7772ms
+2021-10-29 23:43:11.967 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 121.9152ms
+2021-10-29 23:43:12.151 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - -
+2021-10-29 23:43:12.243 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 92.0110ms
+2021-10-29 23:43:44.602 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 82
+2021-10-29 23:43:44.643 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API)'
+2021-10-29 23:43:44.685 -05:00 [INF] Route matched with {action = "AddPost", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostResponseDto] AddPost(BlogEngine.Dto.Request.PostRequestDto) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-29 23:43:45.442 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-29 23:43:46.047 -05:00 [INF] Executed DbCommand (45ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Post] ([AuthorId], [Content], [CreatedDate], [PublishedDate], [Status], [Title])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [Post]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2021-10-29 23:43:46.120 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostResponseDto'.
+2021-10-29 23:43:46.138 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API) in 1447.3234ms
+2021-10-29 23:43:46.138 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API)'
+2021-10-29 23:43:46.139 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 82 - 200 - application/json;+charset=utf-8 1537.0276ms
+2021-10-29 23:44:11.192 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/api/Post/list/author/1 - -
+2021-10-29 23:44:11.197 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.PostsByAuthor (BlogEngine.API)'
+2021-10-29 23:44:11.205 -05:00 [INF] Route matched with {action = "PostsByAuthor", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostsResponseDto] PostsByAuthor(Int32) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-29 23:44:11.255 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-29 23:44:11.500 -05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__authorId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[AuthorId], [p].[Content], [p].[CreatedDate], [p].[PublishedDate], [p].[Status], [p].[Title]
+FROM [Post] AS [p]
+WHERE [p].[AuthorId] = @__authorId_0
+2021-10-29 23:44:11.514 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostsResponseDto'.
+2021-10-29 23:44:11.516 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.PostsByAuthor (BlogEngine.API) in 310.3819ms
+2021-10-29 23:44:11.516 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.PostsByAuthor (BlogEngine.API)'
+2021-10-29 23:44:11.516 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/api/Post/list/author/1 - - - 200 - application/json;+charset=utf-8 324.4180ms
+2021-10-29 23:44:18.948 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/api/Post/list/author/2 - -
+2021-10-29 23:44:18.949 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.PostsByAuthor (BlogEngine.API)'
+2021-10-29 23:44:18.949 -05:00 [INF] Route matched with {action = "PostsByAuthor", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostsResponseDto] PostsByAuthor(Int32) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-29 23:44:18.960 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-29 23:44:18.966 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__authorId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[AuthorId], [p].[Content], [p].[CreatedDate], [p].[PublishedDate], [p].[Status], [p].[Title]
+FROM [Post] AS [p]
+WHERE [p].[AuthorId] = @__authorId_0
+2021-10-29 23:44:18.967 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostsResponseDto'.
+2021-10-29 23:44:18.968 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.PostsByAuthor (BlogEngine.API) in 18.701ms
+2021-10-29 23:44:18.968 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.PostsByAuthor (BlogEngine.API)'
+2021-10-29 23:44:18.968 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/api/Post/list/author/2 - - - 200 - application/json;+charset=utf-8 19.6621ms

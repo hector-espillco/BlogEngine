@@ -1,0 +1,982 @@
+2021-10-30 00:07:50.748 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-30 00:07:50.760 -05:00 [INF] Hosting environment: Development
+2021-10-30 00:07:50.762 -05:00 [INF] Content root path: C:\Personal\BlogEngine\BlogEngine.API
+2021-10-30 00:07:50.763 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger - -
+2021-10-30 00:07:50.810 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/index.html - -
+2021-10-30 00:07:50.832 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger - - - 301 - - 72.8284ms
+2021-10-30 00:07:50.908 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/index.html - - - 200 - text/html;charset=utf-8 98.0638ms
+2021-10-30 00:07:50.922 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - -
+2021-10-30 00:07:50.922 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - -
+2021-10-30 00:07:50.922 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - -
+2021-10-30 00:07:50.957 -05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-10-30 00:07:50.957 -05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-10-30 00:07:50.957 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-10-30 00:07:50.963 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - - - 200 143632 text/css 38.1503ms
+2021-10-30 00:07:50.965 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 42.6394ms
+2021-10-30 00:07:51.022 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 99.8008ms
+2021-10-30 00:07:51.196 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - -
+2021-10-30 00:07:51.293 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 97.5823ms
+2021-10-30 00:09:05.619 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/edit application/json 116
+2021-10-30 00:09:05.664 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.EditPost (BlogEngine.API)'
+2021-10-30 00:09:05.703 -05:00 [INF] Route matched with {action = "EditPost", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostResponseDto] EditPost(BlogEngine.Dto.Request.PostRequestDto) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-30 00:09:05.731 -05:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2021-10-30 00:09:05.749 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.EditPost (BlogEngine.API) in 40.9275ms
+2021-10-30 00:09:05.750 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.EditPost (BlogEngine.API)'
+2021-10-30 00:09:05.750 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/edit application/json 116 - 400 - application/problem+json;+charset=utf-8 131.2481ms
+2021-10-30 00:09:27.737 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/edit application/json 117
+2021-10-30 00:09:27.741 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.EditPost (BlogEngine.API)'
+2021-10-30 00:09:27.742 -05:00 [INF] Route matched with {action = "EditPost", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostResponseDto] EditPost(BlogEngine.Dto.Request.PostRequestDto) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-30 00:09:28.516 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 00:09:29.179 -05:00 [INF] Executed DbCommand (46ms) [Parameters=[@__post_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[AuthorId], [p].[Content], [p].[CreatedDate], [p].[PublishedDate], [p].[Status], [p].[Title]
+FROM [Post] AS [p]
+WHERE [p].[Id] = @__post_Id_0
+2021-10-30 00:09:29.398 -05:00 [INF] Executed DbCommand (13ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Post] SET [AuthorId] = @p0, [Content] = @p1, [CreatedDate] = @p2, [PublishedDate] = @p3, [Status] = @p4, [Title] = @p5
+WHERE [Id] = @p6;
+SELECT @@ROWCOUNT;
+2021-10-30 00:09:29.428 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostResponseDto'.
+2021-10-30 00:09:29.437 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.EditPost (BlogEngine.API) in 1695.7849ms
+2021-10-30 00:09:29.438 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.EditPost (BlogEngine.API)'
+2021-10-30 00:09:29.439 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/edit application/json 117 - 200 - application/json;+charset=utf-8 1702.2301ms
+2021-10-30 00:09:57.135 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/edit application/json 117
+2021-10-30 00:09:57.136 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.EditPost (BlogEngine.API)'
+2021-10-30 00:09:57.136 -05:00 [INF] Route matched with {action = "EditPost", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostResponseDto] EditPost(BlogEngine.Dto.Request.PostRequestDto) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-30 00:09:57.174 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 00:09:57.180 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__post_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[AuthorId], [p].[Content], [p].[CreatedDate], [p].[PublishedDate], [p].[Status], [p].[Title]
+FROM [Post] AS [p]
+WHERE [p].[Id] = @__post_Id_0
+2021-10-30 00:09:57.200 -05:00 [WRN] Author has not created this post.
+2021-10-30 00:09:57.201 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostResponseDto'.
+2021-10-30 00:09:57.201 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.EditPost (BlogEngine.API) in 64.9554ms
+2021-10-30 00:09:57.201 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.EditPost (BlogEngine.API)'
+2021-10-30 00:09:57.201 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/edit application/json 117 - 200 - application/json;+charset=utf-8 67.9751ms
+2021-10-30 00:57:35.199 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 00:57:41.787 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 00:57:42.750 -05:00 [INF] Executed DbCommand (168ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [BlogEngine];
+2021-10-30 00:57:42.801 -05:00 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [BlogEngine] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2021-10-30 00:57:42.816 -05:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-10-30 00:57:42.910 -05:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2021-10-30 00:57:42.911 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-10-30 00:57:42.929 -05:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-10-30 00:57:42.934 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2021-10-30 00:57:42.949 -05:00 [INF] Applying migration '20211030055735_initial-database'.
+2021-10-30 00:57:42.987 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Author] (
+    [Id] int NOT NULL IDENTITY,
+    [UserName] nvarchar(max) NULL,
+    [Password] nvarchar(max) NULL,
+    [Name] nvarchar(max) NULL,
+    [Role] int NOT NULL,
+    CONSTRAINT [PK_Author] PRIMARY KEY ([Id])
+);
+2021-10-30 00:57:42.989 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Post] (
+    [Id] int NOT NULL IDENTITY,
+    [Title] nvarchar(max) NULL,
+    [Content] nvarchar(max) NULL,
+    [AuthorId] int NOT NULL,
+    [PublishedDate] datetime2 NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Post] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Post_Author_AuthorId] FOREIGN KEY ([AuthorId]) REFERENCES [Author] ([Id]) ON DELETE CASCADE
+);
+2021-10-30 00:57:42.991 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Comment] (
+    [Id] int NOT NULL IDENTITY,
+    [AuthorId] int NOT NULL,
+    [Content] nvarchar(max) NULL,
+    [PostId] int NOT NULL,
+    [Available] int NOT NULL,
+    CONSTRAINT [PK_Comment] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Comment_Author_AuthorId] FOREIGN KEY ([AuthorId]) REFERENCES [Author] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_Comment_Post_PostId] FOREIGN KEY ([PostId]) REFERENCES [Post] ([Id]) ON DELETE CASCADE
+);
+2021-10-30 00:57:42.992 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Comment_AuthorId] ON [Comment] ([AuthorId]);
+2021-10-30 00:57:42.993 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Comment_PostId] ON [Comment] ([PostId]);
+2021-10-30 00:57:42.993 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Post_AuthorId] ON [Post] ([AuthorId]);
+2021-10-30 00:57:42.995 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20211030055735_initial-database', N'5.0.0');
+2021-10-30 01:21:06.234 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-30 01:21:06.246 -05:00 [INF] Hosting environment: Development
+2021-10-30 01:21:06.249 -05:00 [INF] Content root path: C:\Personal\BlogEngine\BlogEngine.API
+2021-10-30 01:21:06.250 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger - -
+2021-10-30 01:21:06.310 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/index.html - -
+2021-10-30 01:21:06.322 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger - - - 301 - - 75.7644ms
+2021-10-30 01:21:06.405 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/index.html - - - 200 - text/html;charset=utf-8 102.7313ms
+2021-10-30 01:21:06.418 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - -
+2021-10-30 01:21:06.421 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - -
+2021-10-30 01:21:06.421 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - -
+2021-10-30 01:21:06.462 -05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-10-30 01:21:06.462 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-10-30 01:21:06.462 -05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-10-30 01:21:06.465 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - - - 200 143632 text/css 46.3981ms
+2021-10-30 01:21:06.469 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 47.8749ms
+2021-10-30 01:21:06.524 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 102.5620ms
+2021-10-30 01:21:06.690 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - -
+2021-10-30 01:21:06.788 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 97.7959ms
+2021-10-30 01:35:21.863 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-30 01:35:21.878 -05:00 [INF] Hosting environment: Development
+2021-10-30 01:35:21.881 -05:00 [INF] Content root path: C:\Personal\BlogEngine\BlogEngine.API
+2021-10-30 01:35:21.884 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger - -
+2021-10-30 01:35:21.939 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/index.html - -
+2021-10-30 01:35:21.952 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger - - - 301 - - 73.3952ms
+2021-10-30 01:35:22.030 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/index.html - - - 200 - text/html;charset=utf-8 90.6311ms
+2021-10-30 01:35:22.040 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - -
+2021-10-30 01:35:22.042 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - -
+2021-10-30 01:35:22.047 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - -
+2021-10-30 01:35:22.086 -05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-10-30 01:35:22.086 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-10-30 01:35:22.086 -05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-10-30 01:35:22.090 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - - - 200 143632 text/css 49.3819ms
+2021-10-30 01:35:22.094 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 46.7073ms
+2021-10-30 01:35:22.147 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 105.0464ms
+2021-10-30 01:35:22.311 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - -
+2021-10-30 01:35:22.398 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 87.7324ms
+2021-10-30 01:36:23.844 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 79
+2021-10-30 01:36:23.881 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API)'
+2021-10-30 01:36:23.920 -05:00 [INF] Route matched with {action = "AddPost", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostResponseDto] AddPost(BlogEngine.Dto.Request.CreatePostRequestDto) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-30 01:36:24.654 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 01:36:25.246 -05:00 [INF] Executed DbCommand (45ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Post] ([AuthorId], [Content], [PublishedDate], [Status], [Title])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Post]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2021-10-30 01:36:25.317 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostResponseDto'.
+2021-10-30 01:36:25.334 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API) in 1408.7811ms
+2021-10-30 01:36:25.335 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API)'
+2021-10-30 01:36:25.336 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 79 - 200 - application/json;+charset=utf-8 1494.4007ms
+2021-10-30 01:36:51.036 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 87
+2021-10-30 01:36:51.040 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API)'
+2021-10-30 01:36:51.041 -05:00 [INF] Route matched with {action = "AddPost", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostResponseDto] AddPost(BlogEngine.Dto.Request.CreatePostRequestDto) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-30 01:36:51.074 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 01:36:51.081 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Post] ([AuthorId], [Content], [PublishedDate], [Status], [Title])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Post]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2021-10-30 01:36:51.084 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostResponseDto'.
+2021-10-30 01:36:51.085 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API) in 44.1091ms
+2021-10-30 01:36:51.085 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API)'
+2021-10-30 01:36:51.085 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 87 - 200 - application/json;+charset=utf-8 49.0955ms
+2021-10-30 01:39:59.509 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 85
+2021-10-30 01:39:59.509 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API)'
+2021-10-30 01:39:59.510 -05:00 [INF] Route matched with {action = "AddPost", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostResponseDto] AddPost(BlogEngine.Dto.Request.CreatePostRequestDto) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-30 01:39:59.528 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 01:39:59.534 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Post] ([AuthorId], [Content], [PublishedDate], [Status], [Title])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Post]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2021-10-30 01:39:59.535 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostResponseDto'.
+2021-10-30 01:39:59.535 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API) in 22.3483ms
+2021-10-30 01:39:59.536 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API)'
+2021-10-30 01:39:59.541 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 85 - 200 - application/json;+charset=utf-8 32.4880ms
+2021-10-30 01:44:10.804 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/edit application/json 88
+2021-10-30 01:44:10.804 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.EditPost (BlogEngine.API)'
+2021-10-30 01:44:10.815 -05:00 [INF] Route matched with {action = "EditPost", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostResponseDto] EditPost(BlogEngine.Dto.Request.EditPostRequestDto) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-30 01:44:10.822 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 01:44:11.088 -05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[AuthorId], [p].[Content], [p].[PublishedDate], [p].[Status], [p].[Title]
+FROM [Post] AS [p]
+WHERE [p].[Id] = @__p_0
+2021-10-30 01:44:11.111 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@p5='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Post] SET [AuthorId] = @p0, [Content] = @p1, [PublishedDate] = @p2, [Status] = @p3, [Title] = @p4
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+2021-10-30 01:44:11.116 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostResponseDto'.
+2021-10-30 01:44:11.116 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.EditPost (BlogEngine.API) in 301.3732ms
+2021-10-30 01:44:11.116 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.EditPost (BlogEngine.API)'
+2021-10-30 01:44:11.117 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/edit application/json 88 - 200 - application/json;+charset=utf-8 313.2087ms
+2021-10-30 01:44:25.919 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/edit application/json 90
+2021-10-30 01:44:25.919 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.EditPost (BlogEngine.API)'
+2021-10-30 01:44:25.920 -05:00 [INF] Route matched with {action = "EditPost", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostResponseDto] EditPost(BlogEngine.Dto.Request.EditPostRequestDto) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-30 01:44:25.921 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 01:44:25.927 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[AuthorId], [p].[Content], [p].[PublishedDate], [p].[Status], [p].[Title]
+FROM [Post] AS [p]
+WHERE [p].[Id] = @__p_0
+2021-10-30 01:44:25.946 -05:00 [WRN] Author has not created this post.
+2021-10-30 01:44:25.946 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostResponseDto'.
+2021-10-30 01:44:25.947 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.EditPost (BlogEngine.API) in 27.0903ms
+2021-10-30 01:44:25.947 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.EditPost (BlogEngine.API)'
+2021-10-30 01:44:25.947 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/edit application/json 90 - 200 - application/json;+charset=utf-8 27.7510ms
+2021-10-30 01:46:29.989 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/edit application/json 90
+2021-10-30 01:46:29.989 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.EditPost (BlogEngine.API)'
+2021-10-30 01:46:29.990 -05:00 [INF] Route matched with {action = "EditPost", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostResponseDto] EditPost(BlogEngine.Dto.Request.EditPostRequestDto) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-30 01:46:29.994 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 01:46:30.000 -05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[AuthorId], [p].[Content], [p].[PublishedDate], [p].[Status], [p].[Title]
+FROM [Post] AS [p]
+WHERE [p].[Id] = @__p_0
+2021-10-30 01:46:37.182 -05:00 [WRN] Author has not created this post.
+2021-10-30 01:46:57.006 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostResponseDto'.
+2021-10-30 01:46:57.009 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.EditPost (BlogEngine.API) in 27018.6078ms
+2021-10-30 01:46:57.010 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.EditPost (BlogEngine.API)'
+2021-10-30 01:46:57.013 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/edit application/json 90 - 200 - application/json;+charset=utf-8 27023.5257ms
+2021-10-30 01:48:02.996 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/api/Post/list/writer/1 - -
+2021-10-30 01:48:03.001 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.PostsByWriter (BlogEngine.API)'
+2021-10-30 01:48:03.008 -05:00 [INF] Route matched with {action = "PostsByWriter", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostsResponseDto] PostsByWriter(Int32) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-30 01:48:03.012 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 01:48:03.033 -05:00 [INF] Executed DbCommand (9ms) [Parameters=[@__authorId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[AuthorId], [p].[Content], [p].[PublishedDate], [p].[Status], [p].[Title]
+FROM [Post] AS [p]
+WHERE [p].[AuthorId] = @__authorId_0
+2021-10-30 01:48:03.034 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostsResponseDto'.
+2021-10-30 01:48:03.036 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.PostsByWriter (BlogEngine.API) in 28.1416ms
+2021-10-30 01:48:03.036 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.PostsByWriter (BlogEngine.API)'
+2021-10-30 01:48:03.036 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/api/Post/list/writer/1 - - - 200 - application/json;+charset=utf-8 40.4902ms
+2021-10-30 01:48:25.573 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/api/Post/list/writer/2 - -
+2021-10-30 01:48:25.577 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.PostsByWriter (BlogEngine.API)'
+2021-10-30 01:48:25.577 -05:00 [INF] Route matched with {action = "PostsByWriter", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostsResponseDto] PostsByWriter(Int32) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-30 01:48:25.577 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 01:48:25.581 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__authorId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[AuthorId], [p].[Content], [p].[PublishedDate], [p].[Status], [p].[Title]
+FROM [Post] AS [p]
+WHERE [p].[AuthorId] = @__authorId_0
+2021-10-30 01:48:25.582 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostsResponseDto'.
+2021-10-30 01:48:25.585 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.PostsByWriter (BlogEngine.API) in 7.801ms
+2021-10-30 01:48:25.585 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.PostsByWriter (BlogEngine.API)'
+2021-10-30 01:48:25.585 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/api/Post/list/writer/2 - - - 200 - application/json;+charset=utf-8 12.5825ms
+2021-10-30 01:57:39.549 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-30 01:57:39.561 -05:00 [INF] Hosting environment: Development
+2021-10-30 01:57:39.564 -05:00 [INF] Content root path: C:\Personal\BlogEngine\BlogEngine.API
+2021-10-30 01:57:39.565 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger - -
+2021-10-30 01:57:39.615 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/index.html - -
+2021-10-30 01:57:39.627 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger - - - 301 - - 66.5535ms
+2021-10-30 01:57:39.706 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/index.html - - - 200 - text/html;charset=utf-8 92.4029ms
+2021-10-30 01:57:39.719 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - -
+2021-10-30 01:57:39.720 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - -
+2021-10-30 01:57:39.720 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - -
+2021-10-30 01:57:39.762 -05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-10-30 01:57:39.762 -05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-10-30 01:57:39.762 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-10-30 01:57:39.766 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - - - 200 143632 text/css 45.8921ms
+2021-10-30 01:57:39.771 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 51.0457ms
+2021-10-30 01:57:39.824 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 104.5230ms
+2021-10-30 01:57:39.978 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - -
+2021-10-30 01:57:40.076 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 97.4069ms
+2021-10-30 01:58:41.107 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/api/Post/list/writer/1 - -
+2021-10-30 01:58:41.168 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.GetPostsOfWriter (BlogEngine.API)'
+2021-10-30 01:58:41.204 -05:00 [INF] Route matched with {action = "GetPostsOfWriter", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostsResponseDto] GetPostsOfWriter(Int32) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-30 01:58:41.930 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 01:58:42.552 -05:00 [INF] Executed DbCommand (47ms) [Parameters=[@__authorId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[AuthorId], [p].[Title], [p].[Content], [p].[PublishedDate], [p].[Status], [a].[Role]
+FROM [Post] AS [p]
+INNER JOIN [Author] AS [a] ON [p].[AuthorId] = [a].[Id]
+WHERE ([p].[AuthorId] = @__authorId_0) AND [a].[Role] IN (2, 3)
+2021-10-30 01:58:42.587 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostsResponseDto'.
+2021-10-30 01:58:42.607 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.GetPostsOfWriter (BlogEngine.API) in 1395.479ms
+2021-10-30 01:58:42.608 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.GetPostsOfWriter (BlogEngine.API)'
+2021-10-30 01:58:42.608 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/api/Post/list/writer/1 - - - 200 - application/json;+charset=utf-8 1501.9920ms
+2021-10-30 01:58:54.776 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/api/Post/list/writer/2 - -
+2021-10-30 01:58:54.778 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.GetPostsOfWriter (BlogEngine.API)'
+2021-10-30 01:58:54.779 -05:00 [INF] Route matched with {action = "GetPostsOfWriter", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostsResponseDto] GetPostsOfWriter(Int32) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-30 01:58:54.811 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 01:58:54.821 -05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__authorId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[AuthorId], [p].[Title], [p].[Content], [p].[PublishedDate], [p].[Status], [a].[Role]
+FROM [Post] AS [p]
+INNER JOIN [Author] AS [a] ON [p].[AuthorId] = [a].[Id]
+WHERE ([p].[AuthorId] = @__authorId_0) AND [a].[Role] IN (2, 3)
+2021-10-30 01:58:54.830 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostsResponseDto'.
+2021-10-30 01:58:54.834 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.GetPostsOfWriter (BlogEngine.API) in 55.5895ms
+2021-10-30 01:58:54.835 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.GetPostsOfWriter (BlogEngine.API)'
+2021-10-30 01:58:54.839 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/api/Post/list/writer/2 - - - 200 - application/json;+charset=utf-8 59.8307ms
+2021-10-30 02:02:53.440 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-30 02:02:53.451 -05:00 [INF] Hosting environment: Development
+2021-10-30 02:02:53.454 -05:00 [INF] Content root path: C:\Personal\BlogEngine\BlogEngine.API
+2021-10-30 02:02:53.455 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger - -
+2021-10-30 02:02:53.508 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/index.html - -
+2021-10-30 02:02:53.517 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger - - - 301 - - 66.3247ms
+2021-10-30 02:02:53.592 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/index.html - - - 200 - text/html;charset=utf-8 86.2847ms
+2021-10-30 02:02:53.606 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - -
+2021-10-30 02:02:53.606 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - -
+2021-10-30 02:02:53.606 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - -
+2021-10-30 02:02:53.650 -05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-10-30 02:02:53.650 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-10-30 02:02:53.650 -05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-10-30 02:02:53.652 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - - - 200 143632 text/css 46.5044ms
+2021-10-30 02:02:53.657 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 50.6264ms
+2021-10-30 02:02:53.712 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 106.4476ms
+2021-10-30 02:02:53.871 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - -
+2021-10-30 02:02:53.964 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 93.4139ms
+2021-10-30 02:03:49.829 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/submit application/json 36
+2021-10-30 02:03:49.872 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.SubmitPost (BlogEngine.API)'
+2021-10-30 02:03:49.911 -05:00 [INF] Route matched with {action = "SubmitPost", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostResponseDto] SubmitPost(BlogEngine.Dto.Request.SubmitPostRequestDto) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-30 02:03:50.620 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 02:03:51.259 -05:00 [INF] Executed DbCommand (48ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[AuthorId], [p].[Content], [p].[PublishedDate], [p].[Status], [p].[Title]
+FROM [Post] AS [p]
+WHERE [p].[Id] = @__p_0
+2021-10-30 02:03:51.445 -05:00 [INF] Executed DbCommand (10ms) [Parameters=[@p5='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Post] SET [AuthorId] = @p0, [Content] = @p1, [PublishedDate] = @p2, [Status] = @p3, [Title] = @p4
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+2021-10-30 02:03:51.474 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostResponseDto'.
+2021-10-30 02:03:51.490 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.SubmitPost (BlogEngine.API) in 1573.9082ms
+2021-10-30 02:03:51.491 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.SubmitPost (BlogEngine.API)'
+2021-10-30 02:03:51.492 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/submit application/json 36 - 200 - application/json;+charset=utf-8 1662.6652ms
+2021-10-30 02:04:31.345 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/submit application/json 36
+2021-10-30 02:04:31.346 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.SubmitPost (BlogEngine.API)'
+2021-10-30 02:04:31.347 -05:00 [INF] Route matched with {action = "SubmitPost", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostResponseDto] SubmitPost(BlogEngine.Dto.Request.SubmitPostRequestDto) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-30 02:04:31.386 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 02:04:31.392 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[AuthorId], [p].[Content], [p].[PublishedDate], [p].[Status], [p].[Title]
+FROM [Post] AS [p]
+WHERE [p].[Id] = @__p_0
+2021-10-30 02:04:31.396 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@p5='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Post] SET [AuthorId] = @p0, [Content] = @p1, [PublishedDate] = @p2, [Status] = @p3, [Title] = @p4
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+2021-10-30 02:04:31.399 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostResponseDto'.
+2021-10-30 02:04:31.399 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.SubmitPost (BlogEngine.API) in 52.4831ms
+2021-10-30 02:04:31.399 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.SubmitPost (BlogEngine.API)'
+2021-10-30 02:04:31.400 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/submit application/json 36 - 200 - application/json;+charset=utf-8 55.2019ms
+2021-10-30 02:07:11.146 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-30 02:07:11.158 -05:00 [INF] Hosting environment: Development
+2021-10-30 02:07:11.160 -05:00 [INF] Content root path: C:\Personal\BlogEngine\BlogEngine.API
+2021-10-30 02:07:11.161 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger - -
+2021-10-30 02:07:11.216 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/index.html - -
+2021-10-30 02:07:11.233 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger - - - 301 - - 74.9995ms
+2021-10-30 02:07:11.311 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/index.html - - - 200 - text/html;charset=utf-8 94.9222ms
+2021-10-30 02:07:11.323 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - -
+2021-10-30 02:07:11.323 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - -
+2021-10-30 02:07:11.324 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - -
+2021-10-30 02:07:11.357 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-10-30 02:07:11.357 -05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-10-30 02:07:11.357 -05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-10-30 02:07:11.359 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - - - 200 143632 text/css 36.2869ms
+2021-10-30 02:07:11.364 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 40.2929ms
+2021-10-30 02:07:11.425 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 101.4423ms
+2021-10-30 02:07:11.583 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - -
+2021-10-30 02:07:11.677 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 93.8444ms
+2021-10-30 02:07:42.365 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/approve application/json 36
+2021-10-30 02:07:42.402 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.ApprovePost (BlogEngine.API)'
+2021-10-30 02:07:42.437 -05:00 [INF] Route matched with {action = "ApprovePost", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostResponseDto] ApprovePost(BlogEngine.Dto.Request.ApprovePostRequestDto) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-30 02:07:43.143 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 02:07:43.782 -05:00 [INF] Executed DbCommand (46ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[AuthorId], [p].[Content], [p].[PublishedDate], [p].[Status], [p].[Title]
+FROM [Post] AS [p]
+WHERE [p].[Id] = @__p_0
+2021-10-30 02:07:43.968 -05:00 [INF] Executed DbCommand (9ms) [Parameters=[@p5='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Post] SET [AuthorId] = @p0, [Content] = @p1, [PublishedDate] = @p2, [Status] = @p3, [Title] = @p4
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+2021-10-30 02:07:43.996 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostResponseDto'.
+2021-10-30 02:07:44.016 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.ApprovePost (BlogEngine.API) in 1572.084ms
+2021-10-30 02:07:44.017 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.ApprovePost (BlogEngine.API)'
+2021-10-30 02:07:44.018 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/approve application/json 36 - 200 - application/json;+charset=utf-8 1653.4641ms
+2021-10-30 02:09:27.402 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 64
+2021-10-30 02:09:27.408 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API)'
+2021-10-30 02:09:27.415 -05:00 [INF] Route matched with {action = "AddPost", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostResponseDto] AddPost(BlogEngine.Dto.Request.CreatePostRequestDto) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-30 02:09:27.452 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 02:09:27.461 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Name], [a].[Password], [a].[Role], [a].[UserName]
+FROM [Author] AS [a]
+WHERE [a].[Id] = @__p_0
+2021-10-30 02:09:27.485 -05:00 [WRN] Author can't create a post.
+2021-10-30 02:09:27.485 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostResponseDto'.
+2021-10-30 02:09:27.485 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API) in 70.436ms
+2021-10-30 02:09:27.485 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API)'
+2021-10-30 02:09:27.486 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 64 - 200 - application/json;+charset=utf-8 83.2351ms
+2021-10-30 02:10:10.288 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 64
+2021-10-30 02:10:10.289 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API)'
+2021-10-30 02:10:10.291 -05:00 [INF] Route matched with {action = "AddPost", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostResponseDto] AddPost(BlogEngine.Dto.Request.CreatePostRequestDto) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-30 02:10:10.300 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 02:10:10.310 -05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Name], [a].[Password], [a].[Role], [a].[UserName]
+FROM [Author] AS [a]
+WHERE [a].[Id] = @__p_0
+2021-10-30 02:11:07.233 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-30 02:11:07.246 -05:00 [INF] Hosting environment: Development
+2021-10-30 02:11:07.249 -05:00 [INF] Content root path: C:\Personal\BlogEngine\BlogEngine.API
+2021-10-30 02:11:07.251 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger - -
+2021-10-30 02:11:07.304 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/index.html - -
+2021-10-30 02:11:07.321 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger - - - 301 - - 74.3830ms
+2021-10-30 02:11:07.408 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/index.html - - - 200 - text/html;charset=utf-8 104.5718ms
+2021-10-30 02:11:07.425 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - -
+2021-10-30 02:11:07.426 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - -
+2021-10-30 02:11:07.426 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - -
+2021-10-30 02:11:07.463 -05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-10-30 02:11:07.463 -05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-10-30 02:11:07.463 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-10-30 02:11:07.466 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - - - 200 143632 text/css 40.5627ms
+2021-10-30 02:11:07.470 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 43.5076ms
+2021-10-30 02:11:07.528 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 101.8779ms
+2021-10-30 02:11:07.690 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - -
+2021-10-30 02:11:07.790 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 100.2424ms
+2021-10-30 02:11:27.066 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 64
+2021-10-30 02:11:27.103 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API)'
+2021-10-30 02:11:27.140 -05:00 [INF] Route matched with {action = "AddPost", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostResponseDto] AddPost(BlogEngine.Dto.Request.CreatePostRequestDto) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-30 02:11:27.847 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 02:11:28.449 -05:00 [INF] Executed DbCommand (45ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Name], [a].[Password], [a].[Role], [a].[UserName]
+FROM [Author] AS [a]
+WHERE [a].[Id] = @__p_0
+2021-10-30 02:11:28.672 -05:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Post] ([AuthorId], [Content], [PublishedDate], [Status], [Title])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Post]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2021-10-30 02:11:28.716 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostResponseDto'.
+2021-10-30 02:11:28.733 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API) in 1587.7171ms
+2021-10-30 02:11:28.734 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API)'
+2021-10-30 02:11:28.735 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 64 - 200 - application/json;+charset=utf-8 1668.7120ms
+2021-10-30 02:11:49.036 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/submit application/json 36
+2021-10-30 02:11:49.037 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.SubmitPost (BlogEngine.API)'
+2021-10-30 02:11:49.042 -05:00 [INF] Route matched with {action = "SubmitPost", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostResponseDto] SubmitPost(BlogEngine.Dto.Request.SubmitPostRequestDto) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-30 02:11:49.082 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 02:11:49.090 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[AuthorId], [p].[Content], [p].[PublishedDate], [p].[Status], [p].[Title]
+FROM [Post] AS [p]
+WHERE [p].[Id] = @__p_0
+2021-10-30 02:11:49.101 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@p5='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Post] SET [AuthorId] = @p0, [Content] = @p1, [PublishedDate] = @p2, [Status] = @p3, [Title] = @p4
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+2021-10-30 02:11:49.104 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostResponseDto'.
+2021-10-30 02:11:49.104 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.SubmitPost (BlogEngine.API) in 62.7067ms
+2021-10-30 02:11:49.105 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.SubmitPost (BlogEngine.API)'
+2021-10-30 02:11:49.105 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/submit application/json 36 - 200 - application/json;+charset=utf-8 69.2012ms
+2021-10-30 02:12:23.652 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/reject application/json 66
+2021-10-30 02:12:23.652 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.RejectPost (BlogEngine.API)'
+2021-10-30 02:12:23.658 -05:00 [INF] Route matched with {action = "RejectPost", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostResponseDto] RejectPost(BlogEngine.Dto.Request.RejectPostRequestDto) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-30 02:12:23.669 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 02:12:23.680 -05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[AuthorId], [p].[Content], [p].[PublishedDate], [p].[Status], [p].[Title]
+FROM [Post] AS [p]
+WHERE [p].[Id] = @__p_0
+2021-10-30 02:12:23.701 -05:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Comment] ([AuthorId], [Available], [Content], [PostId])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [Comment]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2021-10-30 02:12:23.707 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@p5='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Post] SET [AuthorId] = @p0, [Content] = @p1, [PublishedDate] = @p2, [Status] = @p3, [Title] = @p4
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+2021-10-30 02:12:23.709 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostResponseDto'.
+2021-10-30 02:12:23.711 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.RejectPost (BlogEngine.API) in 52.3944ms
+2021-10-30 02:12:23.711 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.RejectPost (BlogEngine.API)'
+2021-10-30 02:12:23.712 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/reject application/json 66 - 200 - application/json;+charset=utf-8 60.4669ms
+2021-10-30 02:14:16.607 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-30 02:14:16.621 -05:00 [INF] Hosting environment: Development
+2021-10-30 02:14:16.624 -05:00 [INF] Content root path: C:\Personal\BlogEngine\BlogEngine.API
+2021-10-30 02:14:16.624 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger - -
+2021-10-30 02:14:16.681 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/index.html - -
+2021-10-30 02:14:16.689 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger - - - 301 - - 68.3313ms
+2021-10-30 02:14:16.768 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/index.html - - - 200 - text/html;charset=utf-8 88.6677ms
+2021-10-30 02:14:16.789 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - -
+2021-10-30 02:14:16.789 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - -
+2021-10-30 02:14:16.789 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - -
+2021-10-30 02:14:16.826 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-10-30 02:14:16.826 -05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-10-30 02:14:16.826 -05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-10-30 02:14:16.831 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - - - 200 143632 text/css 41.1645ms
+2021-10-30 02:14:16.834 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 45.0853ms
+2021-10-30 02:14:16.889 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 99.5329ms
+2021-10-30 02:14:17.043 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - -
+2021-10-30 02:14:17.140 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 97.2721ms
+2021-10-30 02:14:41.720 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/comment/add application/json 63
+2021-10-30 02:14:41.760 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.AddComment (BlogEngine.API)'
+2021-10-30 02:14:41.794 -05:00 [INF] Route matched with {action = "AddComment", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.CommentResponseDto] AddComment(BlogEngine.Dto.Request.CommentRequestDto) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-30 02:14:42.496 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 02:14:43.099 -05:00 [INF] Executed DbCommand (43ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[AuthorId], [p].[Content], [p].[PublishedDate], [p].[Status], [p].[Title]
+FROM [Post] AS [p]
+WHERE [p].[Id] = @__p_0
+2021-10-30 02:14:43.327 -05:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Comment] ([AuthorId], [Available], [Content], [PostId])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [Comment]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2021-10-30 02:14:43.374 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.CommentResponseDto'.
+2021-10-30 02:14:43.394 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.AddComment (BlogEngine.API) in 1593.9781ms
+2021-10-30 02:14:43.396 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.AddComment (BlogEngine.API)'
+2021-10-30 02:14:43.397 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/comment/add application/json 63 - 200 - application/json;+charset=utf-8 1676.4511ms
+2021-10-30 02:19:38.999 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-30 02:19:39.010 -05:00 [INF] Hosting environment: Development
+2021-10-30 02:19:39.013 -05:00 [INF] Content root path: C:\Personal\BlogEngine\BlogEngine.API
+2021-10-30 02:19:39.014 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger - -
+2021-10-30 02:19:39.067 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/index.html - -
+2021-10-30 02:19:39.080 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger - - - 301 - - 70.5812ms
+2021-10-30 02:19:39.158 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/index.html - - - 200 - text/html;charset=utf-8 92.9846ms
+2021-10-30 02:19:39.169 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - -
+2021-10-30 02:19:39.170 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - -
+2021-10-30 02:19:39.170 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - -
+2021-10-30 02:19:39.210 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-10-30 02:19:39.210 -05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-10-30 02:19:39.210 -05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-10-30 02:19:39.213 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - - - 200 143632 text/css 43.3756ms
+2021-10-30 02:19:39.216 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 46.3359ms
+2021-10-30 02:19:39.268 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 97.5359ms
+2021-10-30 02:19:39.432 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - -
+2021-10-30 02:19:39.514 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 81.9364ms
+2021-10-30 02:20:16.999 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/comment/add application/json 62
+2021-10-30 02:20:17.037 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.AddComment (BlogEngine.API)'
+2021-10-30 02:20:17.074 -05:00 [INF] Route matched with {action = "AddComment", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.CommentResponseDto] AddComment(BlogEngine.Dto.Request.CommentRequestDto) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-30 02:20:17.790 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 02:20:18.407 -05:00 [INF] Executed DbCommand (44ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[AuthorId], [p].[Content], [p].[PublishedDate], [p].[Status], [p].[Title]
+FROM [Post] AS [p]
+WHERE [p].[Id] = @__p_0
+2021-10-30 02:20:18.503 -05:00 [WRN] Post is not published.
+2021-10-30 02:20:18.510 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.CommentResponseDto'.
+2021-10-30 02:20:18.524 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.AddComment (BlogEngine.API) in 1443.6406ms
+2021-10-30 02:20:18.525 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.AddComment (BlogEngine.API)'
+2021-10-30 02:20:18.526 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/comment/add application/json 62 - 200 - application/json;+charset=utf-8 1527.0088ms
+2021-10-30 20:49:53.497 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-30 20:49:53.525 -05:00 [INF] Hosting environment: Development
+2021-10-30 20:49:53.528 -05:00 [INF] Content root path: C:\Personal\BlogEngine\BlogEngine.API
+2021-10-30 20:49:53.541 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger - -
+2021-10-30 20:49:53.615 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/index.html - -
+2021-10-30 20:49:53.629 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger - - - 301 - - 90.5524ms
+2021-10-30 20:49:53.712 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/index.html - - - 200 - text/html;charset=utf-8 99.0801ms
+2021-10-30 20:49:53.723 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - -
+2021-10-30 20:49:53.731 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - -
+2021-10-30 20:49:53.731 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - -
+2021-10-30 20:49:53.782 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-10-30 20:49:53.782 -05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-10-30 20:49:53.782 -05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-10-30 20:49:53.785 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - - - 200 143632 text/css 61.2334ms
+2021-10-30 20:49:53.789 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 57.1252ms
+2021-10-30 20:49:53.845 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 114.2250ms
+2021-10-30 20:49:54.012 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - -
+2021-10-30 20:49:54.103 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 91.6170ms
+2021-10-30 20:51:07.573 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Account/create-token application/json 52
+2021-10-30 20:51:07.614 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API)'
+2021-10-30 20:51:07.650 -05:00 [INF] Route matched with {action = "CreateToken", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.CreateTokenResponseDto] CreateToken(BlogEngine.Dto.Request.CreateTokenRequestDto) on controller BlogEngine.API.Controllers.AccountController (BlogEngine.API).
+2021-10-30 20:51:08.525 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 20:51:08.882 -05:00 [ERR] The LINQ expression 'DbSet<Author>()
+    .Where(a => a.UserName.Equals(
+        value: __userName_0, 
+        comparisonType: Ordinal) && a.Password.Equals(
+        value: __password_1, 
+        comparisonType: Ordinal))' could not be translated. Additional information: Translation of the 'string.Equals' overload with a 'StringComparison' parameter is not supported. See https://go.microsoft.com/fwlink/?linkid=2129535 for more information.
+Translation of the 'string.Equals' overload with a 'StringComparison' parameter is not supported. See https://go.microsoft.com/fwlink/?linkid=2129535 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+System.InvalidOperationException: The LINQ expression 'DbSet<Author>()
+    .Where(a => a.UserName.Equals(
+        value: __userName_0, 
+        comparisonType: Ordinal) && a.Password.Equals(
+        value: __password_1, 
+        comparisonType: Ordinal))' could not be translated. Additional information: Translation of the 'string.Equals' overload with a 'StringComparison' parameter is not supported. See https://go.microsoft.com/fwlink/?linkid=2129535 for more information.
+Translation of the 'string.Equals' overload with a 'StringComparison' parameter is not supported. See https://go.microsoft.com/fwlink/?linkid=2129535 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.<VisitMethodCall>g__CheckTranslated|15_0(ShapedQueryExpression translated, <>c__DisplayClass15_0& )
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at System.Linq.Expressions.MethodCallExpression.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at System.Linq.Expressions.MethodCallExpression.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass12_0`1.<ExecuteAsync>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.FirstOrDefaultAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at BlogEngine.Application.Services.AccountService.ValidateAuthor(String userName, String password) in C:\Personal\BlogEngine\BlogEngine.Application\Services\AccountService.cs:line 34
+2021-10-30 20:51:08.886 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.CreateTokenResponseDto'.
+2021-10-30 20:51:08.897 -05:00 [INF] Executed action BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API) in 1242.3742ms
+2021-10-30 20:51:08.898 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API)'
+2021-10-30 20:51:08.899 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Account/create-token application/json 52 - 200 - application/json;+charset=utf-8 1326.0871ms
+2021-10-30 20:51:56.654 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Account/create-token application/json 52
+2021-10-30 20:51:56.658 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API)'
+2021-10-30 20:51:56.658 -05:00 [INF] Route matched with {action = "CreateToken", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.CreateTokenResponseDto] CreateToken(BlogEngine.Dto.Request.CreateTokenRequestDto) on controller BlogEngine.API.Controllers.AccountController (BlogEngine.API).
+2021-10-30 20:52:06.584 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 20:53:43.316 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-30 20:53:43.328 -05:00 [INF] Hosting environment: Development
+2021-10-30 20:53:43.330 -05:00 [INF] Content root path: C:\Personal\BlogEngine\BlogEngine.API
+2021-10-30 20:53:43.332 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger - -
+2021-10-30 20:53:43.386 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/index.html - -
+2021-10-30 20:53:43.400 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger - - - 301 - - 71.5683ms
+2021-10-30 20:53:43.472 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/index.html - - - 200 - text/html;charset=utf-8 86.2672ms
+2021-10-30 20:53:43.487 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - -
+2021-10-30 20:53:43.487 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - -
+2021-10-30 20:53:43.487 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - -
+2021-10-30 20:53:43.523 -05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-10-30 20:53:43.523 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-10-30 20:53:43.523 -05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-10-30 20:53:43.526 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - - - 200 143632 text/css 39.2600ms
+2021-10-30 20:53:43.531 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 43.4499ms
+2021-10-30 20:53:43.586 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 98.5607ms
+2021-10-30 20:53:43.815 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - -
+2021-10-30 20:53:43.904 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 88.9288ms
+2021-10-30 20:54:07.565 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Account/create-token application/json 52
+2021-10-30 20:54:07.604 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API)'
+2021-10-30 20:54:07.638 -05:00 [INF] Route matched with {action = "CreateToken", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.CreateTokenResponseDto] CreateToken(BlogEngine.Dto.Request.CreateTokenRequestDto) on controller BlogEngine.API.Controllers.AccountController (BlogEngine.API).
+2021-10-30 20:54:11.079 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 20:54:11.785 -05:00 [INF] Executed DbCommand (64ms) [Parameters=[@__userName_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Name], [a].[Password], [a].[Role], [a].[UserName]
+FROM [Author] AS [a]
+WHERE ([a].[UserName] = @__userName_0) AND ([a].[Password] = @__password_1)
+2021-10-30 20:54:18.736 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.CreateTokenResponseDto'.
+2021-10-30 20:54:18.755 -05:00 [INF] Executed action BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API) in 11112.1163ms
+2021-10-30 20:54:18.756 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API)'
+2021-10-30 20:54:18.757 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Account/create-token application/json 52 - 200 - application/json;+charset=utf-8 11191.6777ms
+2021-10-30 21:21:56.055 -05:00 [INF] User profile is available. Using 'C:\Users\hespillco\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-10-30 21:21:56.381 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-30 21:21:56.383 -05:00 [INF] Hosting environment: Development
+2021-10-30 21:21:56.385 -05:00 [INF] Content root path: C:\Personal\BlogEngine\BlogEngine.API
+2021-10-30 21:21:56.403 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger - -
+2021-10-30 21:21:56.455 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/index.html - -
+2021-10-30 21:21:56.470 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger - - - 301 - - 69.2779ms
+2021-10-30 21:21:56.563 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/index.html - - - 200 - text/html;charset=utf-8 108.7242ms
+2021-10-30 21:21:56.577 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - -
+2021-10-30 21:21:56.578 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - -
+2021-10-30 21:21:56.578 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - -
+2021-10-30 21:21:56.611 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-10-30 21:21:56.611 -05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-10-30 21:21:56.611 -05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-10-30 21:21:56.615 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - - - 200 143632 text/css 36.4579ms
+2021-10-30 21:21:56.621 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 42.7791ms
+2021-10-30 21:21:56.704 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 125.6976ms
+2021-10-30 21:21:56.965 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - -
+2021-10-30 21:21:57.071 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 105.3581ms
+2021-10-30 21:22:31.315 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 66
+2021-10-30 21:22:31.516 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Endpoint BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API) contains authorization metadata, but a middleware was not found that supports authorization.
+Configure your application startup by adding app.UseAuthorization() inside the call to Configure(..) in the application startup code. The call to app.UseAuthorization() must appear between app.UseRouting() and app.UseEndpoints(...).
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.ThrowMissingAuthMiddlewareException(Endpoint endpoint)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-10-30 21:22:31.520 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 66 - 500 - text/plain 206.0117ms
+2021-10-30 21:27:20.459 -05:00 [INF] User profile is available. Using 'C:\Users\hespillco\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-10-30 21:27:20.740 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-30 21:27:20.742 -05:00 [INF] Hosting environment: Development
+2021-10-30 21:27:20.744 -05:00 [INF] Content root path: C:\Personal\BlogEngine\BlogEngine.API
+2021-10-30 21:27:20.761 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger - -
+2021-10-30 21:27:20.798 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/index.html - -
+2021-10-30 21:27:20.816 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger - - - 301 - - 56.8814ms
+2021-10-30 21:27:20.891 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/index.html - - - 200 - text/html;charset=utf-8 93.6948ms
+2021-10-30 21:27:20.908 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - -
+2021-10-30 21:27:20.908 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - -
+2021-10-30 21:27:20.909 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - -
+2021-10-30 21:27:20.946 -05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-10-30 21:27:20.946 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-10-30 21:27:20.946 -05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-10-30 21:27:20.949 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - - - 200 143632 text/css 40.8133ms
+2021-10-30 21:27:20.952 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 43.8549ms
+2021-10-30 21:27:21.011 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 102.4289ms
+2021-10-30 21:27:21.182 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - -
+2021-10-30 21:27:21.290 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 107.7006ms
+2021-10-30 21:27:43.662 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 68
+2021-10-30 21:27:43.818 -05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2021-10-30 21:27:43.821 -05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2021-10-30 21:27:43.822 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 68 - 401 - - 160.5167ms
+2021-10-30 21:45:53.010 -05:00 [INF] User profile is available. Using 'C:\Users\hespillco\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-10-30 21:45:53.289 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-30 21:45:53.291 -05:00 [INF] Hosting environment: Development
+2021-10-30 21:45:53.293 -05:00 [INF] Content root path: C:\Personal\BlogEngine\BlogEngine.API
+2021-10-30 21:45:53.309 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger - -
+2021-10-30 21:45:53.353 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/index.html - -
+2021-10-30 21:45:53.361 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger - - - 301 - - 53.1589ms
+2021-10-30 21:45:53.438 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/index.html - - - 200 - text/html;charset=utf-8 87.8994ms
+2021-10-30 21:45:53.452 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - -
+2021-10-30 21:45:53.453 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - -
+2021-10-30 21:45:53.453 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - -
+2021-10-30 21:45:53.493 -05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-10-30 21:45:53.493 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-10-30 21:45:53.493 -05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-10-30 21:45:53.496 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - - - 200 143632 text/css 43.3976ms
+2021-10-30 21:45:53.500 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 46.6560ms
+2021-10-30 21:45:53.556 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 103.5866ms
+2021-10-30 21:45:53.713 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - -
+2021-10-30 21:45:53.804 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 90.5549ms
+2021-10-30 21:51:11.974 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Account/create-token application/json 52
+2021-10-30 21:51:12.120 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API)'
+2021-10-30 21:51:12.151 -05:00 [INF] Route matched with {action = "CreateToken", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.CreateTokenResponseDto] CreateToken(BlogEngine.Dto.Request.CreateTokenRequestDto) on controller BlogEngine.API.Controllers.AccountController (BlogEngine.API).
+2021-10-30 21:51:12.870 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 21:51:13.463 -05:00 [INF] Executed DbCommand (47ms) [Parameters=[@__userName_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Name], [a].[Password], [a].[Role], [a].[UserName]
+FROM [Author] AS [a]
+WHERE ([a].[UserName] = @__userName_0) AND ([a].[Password] = @__password_1)
+2021-10-30 21:51:13.701 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.CreateTokenResponseDto'.
+2021-10-30 21:51:13.717 -05:00 [INF] Executed action BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API) in 1561.4217ms
+2021-10-30 21:51:13.718 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API)'
+2021-10-30 21:51:13.720 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Account/create-token application/json 52 - 200 - application/json;+charset=utf-8 1748.2116ms
+2021-10-30 21:52:00.329 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 76
+2021-10-30 21:52:00.399 -05:00 [INF] Successfully validated the token.
+2021-10-30 21:52:00.403 -05:00 [INF] Authorization was successful.
+2021-10-30 21:52:00.403 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API)'
+2021-10-30 21:52:00.412 -05:00 [INF] Route matched with {action = "AddPost", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostResponseDto] AddPost(BlogEngine.Dto.Request.CreatePostRequestDto) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-30 21:52:00.442 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 21:52:00.467 -05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Name], [a].[Password], [a].[Role], [a].[UserName]
+FROM [Author] AS [a]
+WHERE [a].[Id] = @__p_0
+2021-10-30 21:52:00.619 -05:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Post] ([AuthorId], [Content], [PublishedDate], [Status], [Title])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Post]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2021-10-30 21:52:00.661 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostResponseDto'.
+2021-10-30 21:52:00.666 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API) in 253.381ms
+2021-10-30 21:52:00.666 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API)'
+2021-10-30 21:52:00.667 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 76 - 200 - application/json;+charset=utf-8 338.4464ms
+2021-10-30 22:03:00.298 -05:00 [INF] User profile is available. Using 'C:\Users\hespillco\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-10-30 22:03:00.581 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-30 22:03:00.583 -05:00 [INF] Hosting environment: Development
+2021-10-30 22:03:00.584 -05:00 [INF] Content root path: C:\Personal\BlogEngine\BlogEngine.API
+2021-10-30 22:03:00.600 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger - -
+2021-10-30 22:03:00.644 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/index.html - -
+2021-10-30 22:03:00.655 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger - - - 301 - - 56.5029ms
+2021-10-30 22:03:00.734 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/index.html - - - 200 - text/html;charset=utf-8 90.5147ms
+2021-10-30 22:03:00.746 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - -
+2021-10-30 22:03:00.746 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - -
+2021-10-30 22:03:00.746 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - -
+2021-10-30 22:03:00.785 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-10-30 22:03:00.785 -05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-10-30 22:03:00.785 -05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-10-30 22:03:00.788 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - - - 200 143632 text/css 41.7728ms
+2021-10-30 22:03:00.792 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 45.1920ms
+2021-10-30 22:03:00.846 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 99.7713ms
+2021-10-30 22:03:01.197 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - -
+2021-10-30 22:03:01.291 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 93.8938ms
+2021-10-30 22:03:26.169 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Account/create-token application/json 52
+2021-10-30 22:03:26.324 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API)'
+2021-10-30 22:03:26.356 -05:00 [INF] Route matched with {action = "CreateToken", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.CreateTokenResponseDto] CreateToken(BlogEngine.Dto.Request.CreateTokenRequestDto) on controller BlogEngine.API.Controllers.AccountController (BlogEngine.API).
+2021-10-30 22:03:27.150 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 22:03:27.778 -05:00 [INF] Executed DbCommand (47ms) [Parameters=[@__userName_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Name], [a].[Password], [a].[Role], [a].[UserName]
+FROM [Author] AS [a]
+WHERE ([a].[UserName] = @__userName_0) AND ([a].[Password] = @__password_1)
+2021-10-30 22:08:14.756 -05:00 [INF] User profile is available. Using 'C:\Users\hespillco\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-10-30 22:08:15.022 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-30 22:08:15.024 -05:00 [INF] Hosting environment: Development
+2021-10-30 22:08:15.025 -05:00 [INF] Content root path: C:\Personal\BlogEngine\BlogEngine.API
+2021-10-30 22:08:15.042 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger - -
+2021-10-30 22:08:15.084 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/index.html - -
+2021-10-30 22:08:15.104 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger - - - 301 - - 63.9532ms
+2021-10-30 22:08:15.182 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/index.html - - - 200 - text/html;charset=utf-8 97.7847ms
+2021-10-30 22:08:15.198 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - -
+2021-10-30 22:08:15.198 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - -
+2021-10-30 22:08:15.198 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - -
+2021-10-30 22:08:15.232 -05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-10-30 22:08:15.232 -05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-10-30 22:08:15.232 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-10-30 22:08:15.241 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - - - 200 143632 text/css 37.4457ms
+2021-10-30 22:08:15.241 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 43.1259ms
+2021-10-30 22:08:15.296 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 98.1286ms
+2021-10-30 22:08:15.452 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - -
+2021-10-30 22:08:15.546 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 93.7309ms
+2021-10-30 22:08:42.924 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Account/create-token application/json 52
+2021-10-30 22:08:43.086 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API)'
+2021-10-30 22:08:43.120 -05:00 [INF] Route matched with {action = "CreateToken", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.CreateTokenResponseDto] CreateToken(BlogEngine.Dto.Request.CreateTokenRequestDto) on controller BlogEngine.API.Controllers.AccountController (BlogEngine.API).
+2021-10-30 22:08:43.838 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 22:08:44.430 -05:00 [INF] Executed DbCommand (49ms) [Parameters=[@__userName_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Name], [a].[Password], [a].[Role], [a].[UserName]
+FROM [Author] AS [a]
+WHERE ([a].[UserName] = @__userName_0) AND ([a].[Password] = @__password_1)
+2021-10-30 22:08:44.643 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.CreateTokenResponseDto'.
+2021-10-30 22:08:44.658 -05:00 [INF] Executed action BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API) in 1532.7274ms
+2021-10-30 22:08:44.659 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API)'
+2021-10-30 22:08:44.660 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Account/create-token application/json 52 - 200 - application/json;+charset=utf-8 1736.7947ms
+2021-10-30 22:09:24.592 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 72
+2021-10-30 22:09:24.666 -05:00 [INF] Successfully validated the token.
+2021-10-30 22:09:24.671 -05:00 [INF] Authorization was successful.
+2021-10-30 22:09:24.671 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API)'
+2021-10-30 22:09:24.678 -05:00 [INF] Route matched with {action = "AddPost", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostResponseDto] AddPost(BlogEngine.Dto.Request.CreatePostRequestDto) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-30 22:09:24.709 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 22:09:24.733 -05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Name], [a].[Password], [a].[Role], [a].[UserName]
+FROM [Author] AS [a]
+WHERE [a].[Id] = @__p_0
+2021-10-30 22:09:24.886 -05:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Post] ([AuthorId], [Content], [PublishedDate], [Status], [Title])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Post]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2021-10-30 22:09:24.927 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostResponseDto'.
+2021-10-30 22:09:24.933 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API) in 254.1784ms
+2021-10-30 22:09:24.933 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API)'
+2021-10-30 22:09:24.934 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 72 - 200 - application/json;+charset=utf-8 342.4669ms
+2021-10-30 22:09:40.799 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 76
+2021-10-30 22:09:40.802 -05:00 [INF] Successfully validated the token.
+2021-10-30 22:09:40.802 -05:00 [INF] Authorization was successful.
+2021-10-30 22:09:40.802 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API)'
+2021-10-30 22:09:40.803 -05:00 [INF] Route matched with {action = "AddPost", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostResponseDto] AddPost(BlogEngine.Dto.Request.CreatePostRequestDto) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-30 22:09:40.812 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 22:09:40.818 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Name], [a].[Password], [a].[Role], [a].[UserName]
+FROM [Author] AS [a]
+WHERE [a].[Id] = @__p_0
+2021-10-30 22:09:40.829 -05:00 [WRN] Author can't create a post.
+2021-10-30 22:09:40.829 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostResponseDto'.
+2021-10-30 22:09:40.829 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API) in 26.5704ms
+2021-10-30 22:09:40.829 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API)'
+2021-10-30 22:09:40.830 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 76 - 200 - application/json;+charset=utf-8 30.6056ms
+2021-10-30 22:10:28.060 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 76
+2021-10-30 22:10:28.061 -05:00 [INF] Successfully validated the token.
+2021-10-30 22:10:28.064 -05:00 [INF] Authorization was successful.
+2021-10-30 22:10:28.065 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API)'
+2021-10-30 22:10:28.065 -05:00 [INF] Route matched with {action = "AddPost", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostResponseDto] AddPost(BlogEngine.Dto.Request.CreatePostRequestDto) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-30 22:10:28.066 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 22:10:28.098 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Name], [a].[Password], [a].[Role], [a].[UserName]
+FROM [Author] AS [a]
+WHERE [a].[Id] = @__p_0
+2021-10-30 22:10:28.105 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Post] ([AuthorId], [Content], [PublishedDate], [Status], [Title])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Post]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2021-10-30 22:10:28.109 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostResponseDto'.
+2021-10-30 22:10:28.110 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API) in 45.0971ms
+2021-10-30 22:10:28.111 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API)'
+2021-10-30 22:10:28.116 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 76 - 200 - application/json;+charset=utf-8 54.7791ms
+2021-10-30 22:11:03.980 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Account/create-token application/json 52
+2021-10-30 22:11:03.981 -05:00 [INF] Successfully validated the token.
+2021-10-30 22:11:03.981 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API)'
+2021-10-30 22:11:03.981 -05:00 [INF] Route matched with {action = "CreateToken", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.CreateTokenResponseDto] CreateToken(BlogEngine.Dto.Request.CreateTokenRequestDto) on controller BlogEngine.API.Controllers.AccountController (BlogEngine.API).
+2021-10-30 22:11:03.987 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 22:11:03.991 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userName_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Name], [a].[Password], [a].[Role], [a].[UserName]
+FROM [Author] AS [a]
+WHERE ([a].[UserName] = @__userName_0) AND ([a].[Password] = @__password_1)
+2021-10-30 22:11:03.991 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.CreateTokenResponseDto'.
+2021-10-30 22:11:03.992 -05:00 [INF] Executed action BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API) in 10.3543ms
+2021-10-30 22:11:03.992 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API)'
+2021-10-30 22:11:03.992 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Account/create-token application/json 52 - 200 - application/json;+charset=utf-8 12.1932ms
+2021-10-30 22:11:23.298 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 76
+2021-10-30 22:11:23.301 -05:00 [INF] Successfully validated the token.
+2021-10-30 22:11:23.301 -05:00 [INF] Authorization was successful.
+2021-10-30 22:11:23.301 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API)'
+2021-10-30 22:11:23.301 -05:00 [INF] Route matched with {action = "AddPost", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostResponseDto] AddPost(BlogEngine.Dto.Request.CreatePostRequestDto) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-10-30 22:11:23.302 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 22:11:23.305 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Name], [a].[Password], [a].[Role], [a].[UserName]
+FROM [Author] AS [a]
+WHERE [a].[Id] = @__p_0
+2021-10-30 22:11:23.308 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Post] ([AuthorId], [Content], [PublishedDate], [Status], [Title])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Post]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2021-10-30 22:11:23.311 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostResponseDto'.
+2021-10-30 22:11:23.312 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API) in 10.3949ms
+2021-10-30 22:11:23.312 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API)'
+2021-10-30 22:11:23.317 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 76 - 200 - application/json;+charset=utf-8 18.9025ms
+2021-10-30 22:11:42.113 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Account/create-token application/json 52
+2021-10-30 22:11:42.113 -05:00 [INF] Successfully validated the token.
+2021-10-30 22:11:42.113 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API)'
+2021-10-30 22:11:42.113 -05:00 [INF] Route matched with {action = "CreateToken", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.CreateTokenResponseDto] CreateToken(BlogEngine.Dto.Request.CreateTokenRequestDto) on controller BlogEngine.API.Controllers.AccountController (BlogEngine.API).
+2021-10-30 22:11:42.115 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 22:11:42.118 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userName_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Name], [a].[Password], [a].[Role], [a].[UserName]
+FROM [Author] AS [a]
+WHERE ([a].[UserName] = @__userName_0) AND ([a].[Password] = @__password_1)
+2021-10-30 22:11:42.119 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.CreateTokenResponseDto'.
+2021-10-30 22:11:42.119 -05:00 [INF] Executed action BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API) in 5.8315ms
+2021-10-30 22:11:42.119 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API)'
+2021-10-30 22:11:42.120 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Account/create-token application/json 52 - 200 - application/json;+charset=utf-8 7.1124ms
+2021-10-30 22:11:48.079 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Account/create-token application/json 52
+2021-10-30 22:11:48.079 -05:00 [INF] Successfully validated the token.
+2021-10-30 22:11:48.079 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API)'
+2021-10-30 22:11:48.079 -05:00 [INF] Route matched with {action = "CreateToken", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.CreateTokenResponseDto] CreateToken(BlogEngine.Dto.Request.CreateTokenRequestDto) on controller BlogEngine.API.Controllers.AccountController (BlogEngine.API).
+2021-10-30 22:11:48.080 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 22:11:48.083 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userName_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Name], [a].[Password], [a].[Role], [a].[UserName]
+FROM [Author] AS [a]
+WHERE ([a].[UserName] = @__userName_0) AND ([a].[Password] = @__password_1)
+2021-10-30 22:11:48.084 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.CreateTokenResponseDto'.
+2021-10-30 22:11:48.084 -05:00 [INF] Executed action BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API) in 4.6855ms
+2021-10-30 22:11:48.084 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API)'
+2021-10-30 22:11:48.084 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Account/create-token application/json 52 - 200 - application/json;+charset=utf-8 5.6499ms
+2021-10-30 22:12:13.982 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 76
+2021-10-30 22:12:13.982 -05:00 [INF] Successfully validated the token.
+2021-10-30 22:12:13.983 -05:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Writer|Editor)
+2021-10-30 22:12:13.985 -05:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2021-10-30 22:12:13.987 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 76 - 403 - - 4.5859ms
+2021-10-30 22:26:11.188 -05:00 [INF] User profile is available. Using 'C:\Users\hespillco\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-10-30 22:26:11.476 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-30 22:26:11.478 -05:00 [INF] Hosting environment: Development
+2021-10-30 22:26:11.479 -05:00 [INF] Content root path: C:\Personal\BlogEngine\BlogEngine.API
+2021-10-30 22:26:11.501 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger - -
+2021-10-30 22:26:11.542 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/index.html - -
+2021-10-30 22:26:11.560 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger - - - 301 - - 60.9926ms
+2021-10-30 22:26:11.637 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/index.html - - - 200 - text/html;charset=utf-8 94.7892ms
+2021-10-30 22:26:11.652 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - -
+2021-10-30 22:26:11.652 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - -
+2021-10-30 22:26:11.652 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - -
+2021-10-30 22:26:11.686 -05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-10-30 22:26:11.686 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-10-30 22:26:11.686 -05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-10-30 22:26:11.688 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - - - 200 143632 text/css 36.2284ms
+2021-10-30 22:26:11.692 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 40.1796ms
+2021-10-30 22:26:11.751 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 98.5510ms
+2021-10-30 22:26:12.060 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - -
+2021-10-30 22:26:12.159 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 99.0327ms
+2021-10-30 22:26:35.972 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Account/create-token application/json 52
+2021-10-30 22:26:36.128 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API)'
+2021-10-30 22:26:36.158 -05:00 [INF] Route matched with {action = "CreateToken", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.CreateTokenResponseDto] CreateToken(BlogEngine.Dto.Request.CreateTokenRequestDto) on controller BlogEngine.API.Controllers.AccountController (BlogEngine.API).
+2021-10-30 22:26:36.931 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-10-30 22:26:37.549 -05:00 [INF] Executed DbCommand (48ms) [Parameters=[@__userName_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Name], [a].[Password], [a].[Role], [a].[UserName]
+FROM [Author] AS [a]
+WHERE ([a].[UserName] = @__userName_0) AND ([a].[Password] = @__password_1)
+2021-10-30 22:26:37.770 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.CreateTokenResponseDto'.
+2021-10-30 22:26:37.787 -05:00 [INF] Executed action BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API) in 1623.2197ms
+2021-10-30 22:26:37.787 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API)'
+2021-10-30 22:26:37.789 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/Account/create-token application/json 52 - 200 - application/json;+charset=utf-8 1817.2804ms
+2021-10-30 22:27:17.352 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/Post/add application/json 72
+2021-10-30 22:27:17.423 -05:00 [INF] Successfully validated the token.
+2021-10-30 22:27:17.430 -05:00 [INF] Authorization was successful.
+2021-10-30 22:27:17.430 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.AddPost (BlogEngine.API)'
+2021-10-30 22:27:17.439 -05:00 [INF] Route matched with {action = "AddPost", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostResponseDto] AddPost(BlogEngine.Dto.Request.CreatePostRequestDto) on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).

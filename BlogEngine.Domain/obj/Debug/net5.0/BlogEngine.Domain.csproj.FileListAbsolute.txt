@@ -1,0 +1,12 @@
+C:\Personal\BlogEngine\BlogEngine.Domain\bin\Debug\net5.0\BlogEngine.Domain.deps.json
+C:\Personal\BlogEngine\BlogEngine.Domain\bin\Debug\net5.0\BlogEngine.Domain.dll
+C:\Personal\BlogEngine\BlogEngine.Domain\bin\Debug\net5.0\ref\BlogEngine.Domain.dll
+C:\Personal\BlogEngine\BlogEngine.Domain\bin\Debug\net5.0\BlogEngine.Domain.pdb
+C:\Personal\BlogEngine\BlogEngine.Domain\obj\Debug\net5.0\BlogEngine.Domain.csprojAssemblyReference.cache
+C:\Personal\BlogEngine\BlogEngine.Domain\obj\Debug\net5.0\BlogEngine.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Personal\BlogEngine\BlogEngine.Domain\obj\Debug\net5.0\BlogEngine.Domain.AssemblyInfoInputs.cache
+C:\Personal\BlogEngine\BlogEngine.Domain\obj\Debug\net5.0\BlogEngine.Domain.AssemblyInfo.cs
+C:\Personal\BlogEngine\BlogEngine.Domain\obj\Debug\net5.0\BlogEngine.Domain.csproj.CoreCompileInputs.cache
+C:\Personal\BlogEngine\BlogEngine.Domain\obj\Debug\net5.0\BlogEngine.Domain.dll
+C:\Personal\BlogEngine\BlogEngine.Domain\obj\Debug\net5.0\ref\BlogEngine.Domain.dll
+C:\Personal\BlogEngine\BlogEngine.Domain\obj\Debug\net5.0\BlogEngine.Domain.pdb

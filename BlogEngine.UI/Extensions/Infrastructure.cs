@@ -17,7 +17,7 @@ namespace BlogEngine.UI.Extensions
         {
             //loging
             Log.Logger = new LoggerConfiguration()
-                        .WriteTo.File(Path.Combine(AppContext.BaseDirectory, $"Logs/DocuClass-{DateTime.Now:yyyyMMdd}.txt"))
+                        .WriteTo.File(Path.Combine(AppContext.BaseDirectory, $"Logs/BlogEngineUI-{DateTime.Now:yyyyMMdd}.txt"))
                         .CreateLogger();
 
             services.AddLogging(configure =>

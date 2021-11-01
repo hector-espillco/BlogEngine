@@ -1,0 +1,12 @@
+C:\Personal\BlogEngine\BlogEngine.Dto\bin\Debug\net5.0\BlogEngine.Dto.deps.json
+C:\Personal\BlogEngine\BlogEngine.Dto\bin\Debug\net5.0\BlogEngine.Dto.dll
+C:\Personal\BlogEngine\BlogEngine.Dto\bin\Debug\net5.0\ref\BlogEngine.Dto.dll
+C:\Personal\BlogEngine\BlogEngine.Dto\bin\Debug\net5.0\BlogEngine.Dto.pdb
+C:\Personal\BlogEngine\BlogEngine.Dto\obj\Debug\net5.0\BlogEngine.Dto.csprojAssemblyReference.cache
+C:\Personal\BlogEngine\BlogEngine.Dto\obj\Debug\net5.0\BlogEngine.Dto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Personal\BlogEngine\BlogEngine.Dto\obj\Debug\net5.0\BlogEngine.Dto.AssemblyInfoInputs.cache
+C:\Personal\BlogEngine\BlogEngine.Dto\obj\Debug\net5.0\BlogEngine.Dto.AssemblyInfo.cs
+C:\Personal\BlogEngine\BlogEngine.Dto\obj\Debug\net5.0\BlogEngine.Dto.csproj.CoreCompileInputs.cache
+C:\Personal\BlogEngine\BlogEngine.Dto\obj\Debug\net5.0\BlogEngine.Dto.dll
+C:\Personal\BlogEngine\BlogEngine.Dto\obj\Debug\net5.0\ref\BlogEngine.Dto.dll
+C:\Personal\BlogEngine\BlogEngine.Dto\obj\Debug\net5.0\BlogEngine.Dto.pdb

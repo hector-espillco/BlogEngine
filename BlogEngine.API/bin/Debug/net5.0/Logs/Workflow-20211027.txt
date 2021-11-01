@@ -1,0 +1,12 @@
+2021-10-27 23:23:21.246 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-27 23:23:21.262 -05:00 [INF] Hosting environment: Development
+2021-10-27 23:23:21.264 -05:00 [INF] Content root path: C:\Personal\BlogEngine\BlogEngine.API
+2021-10-27 23:23:21.263 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/weatherforecast - -
+2021-10-27 23:23:21.294 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.WeatherForecastController.Get (BlogEngine.API)'
+2021-10-27 23:23:21.339 -05:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[BlogEngine.API.WeatherForecast] Get() on controller BlogEngine.API.Controllers.WeatherForecastController (BlogEngine.API).
+2021-10-27 23:23:21.350 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.API.WeatherForecast[]'.
+2021-10-27 23:23:21.391 -05:00 [INF] Executed action BlogEngine.API.Controllers.WeatherForecastController.Get (BlogEngine.API) in 44.79ms
+2021-10-27 23:23:21.393 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.WeatherForecastController.Get (BlogEngine.API)'
+2021-10-27 23:23:21.398 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/weatherforecast - - - 200 - application/json;+charset=utf-8 141.9251ms
+2021-10-27 23:23:21.419 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/favicon.ico - -
+2021-10-27 23:23:21.421 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/favicon.ico - - - 404 - - 1.6983ms
