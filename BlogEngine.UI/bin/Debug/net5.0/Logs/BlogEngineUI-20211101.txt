@@ -47,3 +47,46 @@
 2021-11-01 12:20:48.390 -05:00 [INF] Executed endpoint '/_blazor'
 2021-11-01 12:20:48.390 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:51116/_blazor/disconnect multipart/form-data;+boundary=----WebKitFormBoundaryAqenMwHm4LwZu8zz 359 - 200 - - 56.2727ms
 2021-11-01 12:20:48.392 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:51116/_blazor?id=-S-h63KmzuFKHPSgRbXU7A - - - 101 - - 9962.5163ms
+2021-11-01 12:34:20.436 -05:00 [INF] User profile is available. Using 'C:\Users\hespillco\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-11-01 12:34:20.748 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-01 12:34:20.750 -05:00 [INF] Hosting environment: Development
+2021-11-01 12:34:20.752 -05:00 [INF] Content root path: C:\Personal\BlogEngine\BlogEngine.UI
+2021-11-01 12:34:20.758 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:51116/ - -
+2021-11-01 12:34:20.810 -05:00 [INF] Executing endpoint '/_Host'
+2021-11-01 12:34:20.848 -05:00 [INF] Route matched with {page = "/_Host"}. Executing page /_Host
+2021-11-01 12:34:20.863 -05:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2021-11-01 12:34:20.865 -05:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2021-11-01 12:34:20.964 -05:00 [INF] Executed page /_Host in 110.8084ms
+2021-11-01 12:34:20.966 -05:00 [INF] Executed endpoint '/_Host'
+2021-11-01 12:34:20.972 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:51116/ - - - 200 - text/html;+charset=utf-8 216.9585ms
+2021-11-01 12:34:20.981 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:51116/css/site.css - -
+2021-11-01 12:34:20.981 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:51116/css/bootstrap/bootstrap.min.css - -
+2021-11-01 12:34:20.990 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:51116/_framework/blazor.server.js - -
+2021-11-01 12:34:21.019 -05:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Personal\BlogEngine\BlogEngine.UI\wwwroot\css\site.css'
+2021-11-01 12:34:21.020 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:51116/css/site.css - - - 200 2881 text/css 39.2499ms
+2021-11-01 12:34:21.025 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:51116/css/open-iconic/font/css/open-iconic-bootstrap.min.css - -
+2021-11-01 12:34:21.029 -05:00 [INF] Sending file. Request path: '/css/open-iconic/font/css/open-iconic-bootstrap.min.css'. Physical path: 'C:\Personal\BlogEngine\BlogEngine.UI\wwwroot\css\open-iconic\font\css\open-iconic-bootstrap.min.css'
+2021-11-01 12:34:21.030 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:51116/css/open-iconic/font/css/open-iconic-bootstrap.min.css - - - 200 9395 text/css 4.9928ms
+2021-11-01 12:34:21.034 -05:00 [INF] Sending file. Request path: '/_framework/blazor.server.js'. Physical path: 'N/A'
+2021-11-01 12:34:21.034 -05:00 [INF] Sending file. Request path: '/css/bootstrap/bootstrap.min.css'. Physical path: 'C:\Personal\BlogEngine\BlogEngine.UI\wwwroot\css\bootstrap\bootstrap.min.css'
+2021-11-01 12:34:21.036 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:51116/css/bootstrap/bootstrap.min.css - - - 200 155764 text/css 55.7710ms
+2021-11-01 12:34:21.038 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:51116/_framework/blazor.server.js - - - 200 275403 application/javascript 48.4707ms
+2021-11-01 12:34:21.070 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:51116/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0
+2021-11-01 12:34:21.074 -05:00 [INF] Executing endpoint '/_blazor/negotiate'
+2021-11-01 12:34:21.096 -05:00 [INF] Executed endpoint '/_blazor/negotiate'
+2021-11-01 12:34:21.098 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:51116/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0 - 200 316 application/json 27.7268ms
+2021-11-01 12:34:21.104 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:51116/_blazor?id=b5Njn-kHnOd9SAOrfGA0ng - -
+2021-11-01 12:34:21.105 -05:00 [INF] Executing endpoint '/_blazor'
+2021-11-01 12:34:29.127 -05:00 [INF] Start processing HTTP request POST "http://localhost:60578/api/account/create-token"
+2021-11-01 12:34:29.130 -05:00 [INF] Sending HTTP request POST "http://localhost:60578/api/account/create-token"
+2021-11-01 12:34:29.592 -05:00 [INF] Received HTTP response headers after 456.9852ms - 200
+2021-11-01 12:34:29.595 -05:00 [INF] End processing HTTP request after 473.9335ms - 200
+2021-11-01 12:34:29.619 -05:00 [INF] Authorization was successful.
+2021-11-01 12:34:29.628 -05:00 [INF] Start processing HTTP request GET "http://localhost:60578/api/account/get"
+2021-11-01 12:34:29.630 -05:00 [INF] Sending HTTP request GET "http://localhost:60578/api/account/get"
+2021-11-01 12:34:29.755 -05:00 [INF] Received HTTP response headers after 124.888ms - 200
+2021-11-01 12:34:29.757 -05:00 [INF] End processing HTTP request after 128.8198ms - 200
+2021-11-01 12:34:29.763 -05:00 [INF] Start processing HTTP request GET "http://localhost:60578/api/post/list"
+2021-11-01 12:34:29.765 -05:00 [INF] Sending HTTP request GET "http://localhost:60578/api/post/list"
+2021-11-01 12:34:29.868 -05:00 [INF] Received HTTP response headers after 102.299ms - 200
+2021-11-01 12:34:29.870 -05:00 [INF] End processing HTTP request after 106.6482ms - 200

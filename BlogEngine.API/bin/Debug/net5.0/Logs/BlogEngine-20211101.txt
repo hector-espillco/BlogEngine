@@ -3213,3 +3213,182 @@ WHERE [p].[PublishedDate] IS NOT NULL
 2021-11-01 12:20:46.564 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.GetPosts (BlogEngine.API) in 104.2402ms
 2021-11-01 12:20:46.564 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.GetPosts (BlogEngine.API)'
 2021-11-01 12:20:46.564 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/api/post/list - - - 200 - application/json;+charset=utf-8 109.4135ms
+2021-11-01 12:34:20.781 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-01 12:34:22.546 -05:00 [INF] Executed DbCommand (149ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [BlogEngine];
+2021-11-01 12:34:22.596 -05:00 [INF] Executed DbCommand (47ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [BlogEngine] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2021-11-01 12:34:22.615 -05:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-11-01 12:34:22.751 -05:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2021-11-01 12:34:22.754 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-11-01 12:34:22.781 -05:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-11-01 12:34:22.789 -05:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2021-11-01 12:34:22.809 -05:00 [INF] Applying migration '20211030055735_initial-database'.
+2021-11-01 12:34:22.852 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Author] (
+    [Id] int NOT NULL IDENTITY,
+    [UserName] nvarchar(max) NULL,
+    [Password] nvarchar(max) NULL,
+    [Name] nvarchar(max) NULL,
+    [Role] int NOT NULL,
+    CONSTRAINT [PK_Author] PRIMARY KEY ([Id])
+);
+2021-11-01 12:34:22.854 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Post] (
+    [Id] int NOT NULL IDENTITY,
+    [Title] nvarchar(max) NULL,
+    [Content] nvarchar(max) NULL,
+    [AuthorId] int NOT NULL,
+    [PublishedDate] datetime2 NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Post] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Post_Author_AuthorId] FOREIGN KEY ([AuthorId]) REFERENCES [Author] ([Id]) ON DELETE CASCADE
+);
+2021-11-01 12:34:22.855 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Comment] (
+    [Id] int NOT NULL IDENTITY,
+    [AuthorId] int NOT NULL,
+    [Content] nvarchar(max) NULL,
+    [PostId] int NOT NULL,
+    [Available] int NOT NULL,
+    CONSTRAINT [PK_Comment] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Comment_Author_AuthorId] FOREIGN KEY ([AuthorId]) REFERENCES [Author] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_Comment_Post_PostId] FOREIGN KEY ([PostId]) REFERENCES [Post] ([Id]) ON DELETE CASCADE
+);
+2021-11-01 12:34:22.856 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Comment_AuthorId] ON [Comment] ([AuthorId]);
+2021-11-01 12:34:22.857 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Comment_PostId] ON [Comment] ([PostId]);
+2021-11-01 12:34:22.857 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Post_AuthorId] ON [Post] ([AuthorId]);
+2021-11-01 12:34:22.861 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20211030055735_initial-database', N'5.0.0');
+2021-11-01 12:34:22.874 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-11-01 12:34:22.924 -05:00 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2021-11-01 12:34:23.102 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Author] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2021-11-01 12:34:23.272 -05:00 [INF] Executed DbCommand (22ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Author] ([Name], [Password], [Role], [UserName])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [Author]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2021-11-01 12:34:23.290 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Author] ([Name], [Password], [Role], [UserName])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [Author]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2021-11-01 12:34:23.291 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Author] ([Name], [Password], [Role], [UserName])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [Author]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2021-11-01 12:34:23.329 -05:00 [INF] User profile is available. Using 'C:\Users\hespillco\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-11-01 12:34:23.513 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-11-01 12:34:23.515 -05:00 [INF] Hosting environment: Development
+2021-11-01 12:34:23.517 -05:00 [INF] Content root path: C:\Personal\BlogEngine\BlogEngine.API
+2021-11-01 12:34:23.534 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger - -
+2021-11-01 12:34:23.572 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/index.html - -
+2021-11-01 12:34:23.583 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger - - - 301 - - 50.9845ms
+2021-11-01 12:34:23.647 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/index.html - - - 200 - text/html;charset=utf-8 75.0119ms
+2021-11-01 12:34:23.661 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - -
+2021-11-01 12:34:23.661 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - -
+2021-11-01 12:34:23.661 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - -
+2021-11-01 12:34:23.719 -05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-11-01 12:34:23.719 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-11-01 12:34:23.719 -05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-11-01 12:34:23.721 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui.css - - - 200 143632 text/css 60.7822ms
+2021-11-01 12:34:23.725 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 64.4005ms
+2021-11-01 12:34:23.775 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 114.5093ms
+2021-11-01 12:34:23.939 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - -
+2021-11-01 12:34:24.027 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 88.4302ms
+2021-11-01 12:34:29.207 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:60578/api/account/create-token application/json;+charset=utf-8 43
+2021-11-01 12:34:29.295 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API)'
+2021-11-01 12:34:29.320 -05:00 [INF] Route matched with {action = "CreateToken", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.CreateTokenResponseDto] CreateToken(BlogEngine.Dto.Request.CreateTokenRequestDto) on controller BlogEngine.API.Controllers.AccountController (BlogEngine.API).
+2021-11-01 12:34:29.343 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-01 12:34:29.429 -05:00 [INF] Executed DbCommand (18ms) [Parameters=[@__userName_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Name], [a].[Password], [a].[Role], [a].[UserName]
+FROM [Author] AS [a]
+WHERE ([a].[UserName] = @__userName_0) AND ([a].[Password] = @__password_1)
+2021-11-01 12:34:29.571 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.CreateTokenResponseDto'.
+2021-11-01 12:34:29.584 -05:00 [INF] Executed action BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API) in 260.0312ms
+2021-11-01 12:34:29.585 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.AccountController.CreateToken (BlogEngine.API)'
+2021-11-01 12:34:29.586 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:60578/api/account/create-token application/json;+charset=utf-8 43 - 200 - application/json;+charset=utf-8 379.5507ms
+2021-11-01 12:34:29.632 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/api/account/get - -
+2021-11-01 12:34:29.690 -05:00 [INF] Successfully validated the token.
+2021-11-01 12:34:29.696 -05:00 [INF] Authorization was successful.
+2021-11-01 12:34:29.696 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.AccountController.GetAuthor (BlogEngine.API)'
+2021-11-01 12:34:29.699 -05:00 [INF] Route matched with {action = "GetAuthor", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.AuthorResponseDto] GetAuthor() on controller BlogEngine.API.Controllers.AccountController (BlogEngine.API).
+2021-11-01 12:34:29.730 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-01 12:34:29.747 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Name], [a].[Password], [a].[Role], [a].[UserName]
+FROM [Author] AS [a]
+WHERE [a].[Id] = @__p_0
+2021-11-01 12:34:29.750 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.AuthorResponseDto'.
+2021-11-01 12:34:29.753 -05:00 [INF] Executed action BlogEngine.API.Controllers.AccountController.GetAuthor (BlogEngine.API) in 54.165ms
+2021-11-01 12:34:29.753 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.AccountController.GetAuthor (BlogEngine.API)'
+2021-11-01 12:34:29.754 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/api/account/get - - - 200 - application/json;+charset=utf-8 121.7020ms
+2021-11-01 12:34:29.766 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:60578/api/post/list - -
+2021-11-01 12:34:29.768 -05:00 [INF] Successfully validated the token.
+2021-11-01 12:34:29.768 -05:00 [INF] Authorization was successful.
+2021-11-01 12:34:29.768 -05:00 [INF] Executing endpoint 'BlogEngine.API.Controllers.PostController.GetPosts (BlogEngine.API)'
+2021-11-01 12:34:29.771 -05:00 [INF] Route matched with {action = "GetPosts", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[BlogEngine.Dto.Response.PostsResponseDto] GetPosts() on controller BlogEngine.API.Controllers.PostController (BlogEngine.API).
+2021-11-01 12:34:29.777 -05:00 [INF] Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-11-01 12:34:29.858 -05:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Title], [p].[Content], [p].[PublishedDate], [p].[AuthorId], [p].[Status], [a].[Name] AS [AuthorPost], [t].[Content] AS [ContentComment], CASE
+    WHEN [t].[Id] IS NULL THEN 0
+    ELSE [t].[Id]
+END AS [IdComment]
+FROM [Post] AS [p]
+INNER JOIN [Author] AS [a] ON [p].[AuthorId] = [a].[Id]
+LEFT JOIN (
+    SELECT [c].[Id], [c].[Content], [c].[PostId]
+    FROM [Comment] AS [c]
+    WHERE [c].[Available] = 1
+) AS [t] ON [p].[Id] = [t].[PostId]
+WHERE [p].[PublishedDate] IS NOT NULL
+2021-11-01 12:34:29.862 -05:00 [INF] Executing ObjectResult, writing value of type 'BlogEngine.Dto.Response.PostsResponseDto'.
+2021-11-01 12:34:29.866 -05:00 [INF] Executed action BlogEngine.API.Controllers.PostController.GetPosts (BlogEngine.API) in 94.7753ms
+2021-11-01 12:34:29.866 -05:00 [INF] Executed endpoint 'BlogEngine.API.Controllers.PostController.GetPosts (BlogEngine.API)'
+2021-11-01 12:34:29.866 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:60578/api/post/list - - - 200 - application/json;+charset=utf-8 99.9196ms
